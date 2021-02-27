@@ -75,7 +75,7 @@ ENV LD_LIBRARY_PATH=/usr/local/lib
 RUN curl https://tools.netsa.cert.org/releases/netsa-python-$NETSA_PYTHON_VERSION.tar.gz | tar -xz && cd netsa-python-* && python setup.py install && cd ../ && rm -rf netsa-python-$NETSA_PYTHON_VERSION
 RUN curl https://tools.netsa.cert.org/releases/pyfixbuf-$PYFIXBUF_VERSION.tar.gz | tar -xz && cd pyfixbuf-* && python setup.py build && python setup.py install && cd ../ && rm -rf pyfixbuf-$PYFIXBUF_VERSION
 RUN curl https://tools.netsa.cert.org/releases/rayon-$RAYON_VERSION.tar.gz | tar -xz && cd rayon-* && python setup.py install && cd ../ && rm -rf rayon-$RAYON_VERSION
-RUN curl https://tools.netsa.cert.org/releases/yaf-$YAF_VERSION.tar.gz | tar -xz && cd yaf-* && ./configure && make && make install && cd ../ && rm -rf yaf-$YAF_VERSION
+RUN curl https://tools.netsa.cert.org/releases/yaf-$YAF_VERSION.tar.gz | tar -xz && cd yaf-* && ./configure --enable-applabel --enable-entropy && make && make install && cd ../ && rm -rf yaf-$YAF_VERSION
 RUN curl https://tools.netsa.cert.org/releases/super_mediator-$SUPER_VERSION.tar.gz | tar -xz && cd super_mediator-* && ./configure --with-mysql && make && make install && cd ../ && rm -rf super_mediator-$SUPER_VERSION
 # Run ldconfig to create necessary links to shared libraries so pipeline works.
 RUN su -l -c "ldconfig"
