@@ -20,7 +20,7 @@ The image has the following additional software installed over the base ubuntu d
 2. Fixbuf 2.4.0
 3. NetSA Python 1.5
 4. Rayon 1.4.3
-5. yaf 2.11.0
+5. yaf 2.11.0, with entropy and applabel
 6. super_mediator 1.7.1
 6. Analysis Pipeline 4.5.1
 7. gawk, wget, & curl
